@@ -3,6 +3,90 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --active-btn: hsl(156, 42%, 18%);
+  --white: hsl(30, 38%, 92%);
+  --card-bg: hsl(0, 0%, 100%);
+  --secondary: hsl(158, 36%, 37%);
+  --tertiary: hsl(228, 12%, 48%);
+}
+
+/* Independent of Screen Size */
+/* Typography */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+p,
+.category {
+  font-size: 14px;
+  color: var(--tertiary);
+}
+
+.category {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+.name,
+.discounted {
+  font-family: "Fraunces", cursive, serif;
+}
+.discounted {
+  color: var(--secondary);
+}
+.full {
+  text-decoration: line-through;
+}
+
+/* Basic Styles */
+body {
+  background: var(--white);
+}
+.card {
+  background: var(--card-bg);
+  display: flex;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+picture,
+.info {
+  width: 50%;
+}
+.info {
+  padding: 30px;
+}
+img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+button.cart-btn {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+}
+/* Mobile */
+@media (max-width: 600px) {
+  main.card {
+    max-width: 370px;
+    flex-direction: column;
+  }
+  picture,
+  .info {
+    width: 100%;
+  }
+  img {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
+}
 
 /* attribution */
 .attribution {
