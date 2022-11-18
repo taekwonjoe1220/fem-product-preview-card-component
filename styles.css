@@ -9,6 +9,7 @@
   --card-bg: hsl(0, 0%, 100%);
   --secondary: hsl(158, 36%, 37%);
   --tertiary: hsl(228, 12%, 48%);
+  --product-title: hsl(212, 21%, 14%);
 }
 
 /* Independent of Screen Size */
@@ -17,37 +18,53 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 p,
-.category {
+.category,
+.cart-btn {
   font-size: 14px;
   color: var(--tertiary);
 }
 
-.category {
+main.card h2.category {
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   font-weight: 500;
+  font-size: 12px;
+  margin-top: 0;
 }
 .name,
 .discounted {
   font-family: "Fraunces", cursive, serif;
+  color: var(--product-title);
+}
+.price {
+  display: flex;
+  align-items: center;
 }
 .discounted {
   color: var(--secondary);
+  font-size: 30px;
 }
+
 .full {
   text-decoration: line-through;
+  margin-left: 24px;
 }
 
 /* Basic Styles */
 body {
   background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.card {
+main.card {
   background: var(--card-bg);
   display: flex;
-  max-width: 720px;
-  margin: 0 auto;
+  max-width: 600px;
   border-radius: 10px;
+  height: 450px;
 }
 picture,
 .info {
@@ -63,20 +80,59 @@ img {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+.category, 
+.name, 
+.description, 
+.price, 
+.cart-btn {
+  margin: 25px 0;
+}
+.name {
+  font-size: 32px;
+  line-height: 1;
+}
+.description {
+  line-height: 1.5;
+}
+
+svg {
+  margin-right: 10px;
+}
 button.cart-btn {
   background: var(--secondary);
   color: var(--white);
   border: none;
   border-radius: 10px;
-  width: 80%;
-  height: 40px;
+  width: 100%;
+  height: 50px;
   margin: 0 auto;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-btn:active {
+  background: var(--active-btn);
+}
+button:hover {
+  cursor: pointer;
 }
 /* Mobile */
 @media (max-width: 600px) {
   main.card {
     max-width: 370px;
     flex-direction: column;
+    height: 640px;
+  }
+  .category, 
+.name, 
+.description, 
+.price, 
+.cart-btn {
+  margin: 20px 0;
+}
+  .category {
+    margin-top: 0;
   }
   picture,
   .info {
@@ -85,6 +141,9 @@ button.cart-btn {
   img {
     border-bottom-left-radius: 0;
     border-top-right-radius: 10px;
+  }
+  .description {
+    padding-right: 14px;
   }
 }
 
